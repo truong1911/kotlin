@@ -1,0 +1,29 @@
+var handShakeString = arrayOf("\"wink\"", "\"double blink\"", "\"close your eyes\"", "\"jump\"")
+fun secret(n: Int)
+{
+    val result:MutableList<String> = mutableListOf()
+    var t = 4 ;
+    
+    
+    for (i in 0..3){
+        var a = n / i;
+        var n = n % i;
+        if (a == 1){
+    		result.add(handShakeString[t]);	 
+        }
+        
+        t--;
+    }
+    if (result[0] == "revert"){
+        result.removeAt(0);
+    } else {
+        result.reverse();
+    }
+    
+    println(result);
+}
+
+
+fun main() {
+    secret(11);
+}
